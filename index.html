@@ -1,31 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
 	<title>Waitstaff Calculator</title>
+	<script src="https://code.angularjs.org/1.3.10/angular.js"></script>
 	<script src="app.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body ng-controller="myCtrl">
 	<div class="mainScreen">
 		<div class="titleHeader"><h1>Waitstaff Calculator</h1></div>
 		<div class="mealDetailsSide">
 			<div class="mealDetailsBox">
-				<h2>Enter the meal details</h2>
-				<hr />
+				<form name="mealDetalsForm" novalidate>
+					<h2>Enter the meal details</h2>
+					<hr />
+					<p class="bmp">Base Meal Price: $<input type="number" ng-model="data.basePrice" required></p>
+					<p class="tr">Tax Rate: %<input type="number" ng-model="data.taxRate" required></p>
+					<p>Tip Percentage: %<input type="number" ng-model="data.tipPercentage" required></p>
+					<div class="buttons">
+						<button ng-click="submit()">Submit</button>
+						<button ng-click="cancel()">Cancel</button>
+					</div>
+					<p ng-if="submitted && mealDetailsForm.$error.required">Make sure all fields are filled out!</p>
+				</form>
 			</div>
 		</div>
 		<div class="customerAndEarningsSide">
 			<div class="customerChargesBox">
 				<h2>Customer Charges</h2>
 				<hr />
+				<div class="ccInfo">
+					<span class="subTotal">Subtotal: </span><span ng-show="showCustomerChargesBox">{{computeSubtotal(data.basePrice, data.taxRate)}}</span><br />
+					<span class="tip">Tip: </span><span ng-show="showCustomerChargesBox">{{computeTip(data.tipPercentage)}}</span>
+					<hr />
+					<span class="total">Total: </span><span ng-show="showCustomerChargesBox">{{computeTotal()}}</span>
+				</div>
 			</div>
 			<div class="myEarningsInfoBox">
 				<h2>My Earnings Info</h2>
 				<hr />
+				<span class="tipTotal">Tip Total: </span><span ng-show="showMyEarningsBox">{{data.tipTotal}}</span><br />
+				<span class="mealCount">Meal Count: </span><span ng-show="showMyEarningsBox">{{data.mealCount}}</span><br />
+				<span class="avgTipPerMeal">Average Tip Per Meal: </span><span ng-show="showMyEarningsBox">{{computeAvgTip(data.tipTotal, data.mealCount)}}</span>
 			</div>
 		</div>
 		<div class="resetButton">
-			<button class="resetButton">Reset</button>
+			<button class="resetButton" ng-click="reset()">Reset</button>
 		</div>
 	</div>
 </body>

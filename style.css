@@ -57,6 +57,31 @@ Meal Details Box
 	margin-left: 130px;
 }
 
+.mealDetailsBox p {
+	font-size: 18pt;
+	text-align: center;
+	line-height: 50px;
+}
+
+.bmp {
+	margin-left: -4px;
+}
+
+.tr {
+	margin-left: 57px;
+}
+
+.buttons {
+	margin-top: 70px;
+	margin-left: 30px;
+}
+
+.buttons button {
+	padding: 5px;
+	font-size: 20pt;
+	margin-left: 40px;
+}
+
 
 /*------------------------
 Customer Charges Box
@@ -69,6 +94,40 @@ Customer Charges Box
 	margin-top: 50px;
 }
 
+.ccInfo {
+	width: 70%;
+}
+
+/*.ccInfo div {
+	display: inline-block;
+}*/
+
+.ccInfo span {
+	font-size: 12pt;
+	line-height: 30px;
+}
+
+/*.customerChargesLeftSide {
+	text-align: right;
+	width: 49%;
+}
+
+.customerChargesRightSide {
+	width: 49%;
+}*/
+
+.subTotal {
+	margin-left: 30px;
+}
+
+.tip {
+	margin-left: 61px;
+}
+
+.total {
+	margin-left: 50px;
+}
+
 /*------------------------
 My Info Box
 ------------------------*/
@@ -78,6 +137,23 @@ My Info Box
 	width: 300px;
 	border: 1px solid black;
 	margin-top: 40px;
+}
+
+.myEarningsInfoBox span {
+	line-height: 40px;
+	font-size: 12pt;
+}
+
+.tipTotal {
+	margin-left: 92px;
+}
+
+.mealCount {
+	margin-left: 76px;
+}
+
+.avgTipPerMeal {
+	margin-left: 10px;
 }
 
 
