@@ -43,8 +43,11 @@ angular.module("myApp", [])
 		$scope.showCustomerChargesBox = false;
 	}
 	$scope.reset = function() {
-		$scope.data.tipTotal = "";
-		$scope.data.mealCount = "";
+		$scope.data.tipTotal = 0;
+		$scope.data.mealCount = 0;
+		$scope.data.basePrice = "";
+		$scope.data.taxRate = "";
+		$scope.data.tipPercentage = "";
 		$scope.showCustomerChargesBox = false;
 		$scope.showMyEarningsBox = false;
 	}

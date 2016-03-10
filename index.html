@@ -30,18 +30,18 @@
 				<h2>Customer Charges</h2>
 				<hr />
 				<div class="ccInfo">
-					<span class="subTotal">Subtotal: </span><span ng-show="showCustomerChargesBox">{{computeSubtotal(data.basePrice, data.taxRate)}}</span><br />
-					<span class="tip">Tip: </span><span ng-show="showCustomerChargesBox">{{computeTip(data.tipPercentage)}}</span>
+					<span class="subTotal">Subtotal: </span><span ng-show="showCustomerChargesBox">{{computeSubtotal(data.basePrice, data.taxRate) | currency}}</span><br />
+					<span class="tip">Tip: </span><span ng-show="showCustomerChargesBox">{{computeTip(data.tipPercentage) | currency}}</span>
 					<hr />
-					<span class="total">Total: </span><span ng-show="showCustomerChargesBox">{{computeTotal()}}</span>
+					<span class="total">Total: </span><span ng-show="showCustomerChargesBox">{{computeTotal() | currency}}</span>
 				</div>
 			</div>
 			<div class="myEarningsInfoBox">
 				<h2>My Earnings Info</h2>
 				<hr />
-				<span class="tipTotal">Tip Total: </span><span ng-show="showMyEarningsBox">{{data.tipTotal}}</span><br />
+				<span class="tipTotal">Tip Total: </span><span ng-show="showMyEarningsBox">{{data.tipTotal | currency}}</span><br />
 				<span class="mealCount">Meal Count: </span><span ng-show="showMyEarningsBox">{{data.mealCount}}</span><br />
-				<span class="avgTipPerMeal">Average Tip Per Meal: </span><span ng-show="showMyEarningsBox">{{computeAvgTip(data.tipTotal, data.mealCount)}}</span>
+				<span class="avgTipPerMeal">Average Tip Per Meal: </span><span ng-show="showMyEarningsBox">{{computeAvgTip(data.tipTotal, data.mealCount) | currency}}</span>
 			</div>
 		</div>
 		<div class="resetButton">
