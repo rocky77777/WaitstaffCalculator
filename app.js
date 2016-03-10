@@ -47,7 +47,7 @@ angular.module("myApp", [])
 		$scope.data.mealCount = 0;
 		$scope.data.basePrice = "";
 		$scope.data.taxRate = "";
-		$scope.data.tipPercentage = "";
+		$scope.data.tipPercentage = ""; 
 		$scope.showCustomerChargesBox = false;
 		$scope.showMyEarningsBox = false;
 	}
