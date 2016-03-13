@@ -11,10 +11,10 @@
 		<div class="titleHeader"><h1>Waitstaff Calculator</h1></div>
 		<div class="mealDetailsSide">
 			<div class="mealDetailsBox">
-				<form name="mealDetalsForm" novalidate>
+				<form name="mealDetailsForm" novalidate>
 					<h2>Enter the meal details</h2>
 					<hr />
-					<p class="bmp">Base Meal Price: $<input type="number" ng-model="data.basePrice" required></p>
+					<p class="bmp">Base Meal Price: $<input type="number" name="basePrice" ng-model="data.basePrice" required></p>
 					<p class="tr">Tax Rate: %<input type="number" ng-model="data.taxRate" required></p>
 					<p>Tip Percentage: %<input type="number" ng-model="data.tipPercentage" required></p>
 					<div class="buttons">

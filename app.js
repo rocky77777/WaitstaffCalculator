@@ -28,13 +28,13 @@ angular.module("myApp", [])
 	}
 	$scope.submit = function() {
 		$scope.submitted = true;
-		// if($scope.mealDetailsForm.$valid) {
+		if($scope.mealDetailsForm.$valid) {
 			$scope.showCustomerChargesBox = true;
 			$scope.showMyEarningsBox = true;
 			$scope.data.tipTotal = $scope.data.tipTotal + tip;
 			$scope.data.mealCount ++;
 			$scope.submitted = false;
-		// }
+		}
 	}
 	$scope.cancel = function() {
 		$scope.data.basePrice = "";
